@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
+
 :root {
     box-sizing: border-box;
-    font-size: 16px;
+    font-size: 1em;
     --main-gold: #BDAE82;
     --main-dark: #000000;
+    --font-merriweather: 'Merriweather', serif;
 }
 *,
 ::before,
@@ -17,10 +20,15 @@ body {
 h1 {
     font-size: 2.5rem;
     color: var(--main-gold);
+    font-family: var(--font-merriweather);
 }
 .wrapper {
+    min-height: 100vh;
     margin: 0 auto;
-    max-width: 1920px;
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .video-container {
     padding: 2em 1.5em;
@@ -36,12 +44,42 @@ h1 {
 }
 .title__text {
     display: inline-block;
-    width: 8em;
+    width: 140px;
     background-color: var(--main-dark);
 }
 .player {
     padding-top: 2em;
 }
+.player__video {
+    width: 100%;
+}
 /*---------------layout for control player--------------------------*/
 
+
+
+
+/*---------------footer---------------------------------------------*/
+.footer {
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-item {
+    font-size: 1.2rem;
+    padding: 0.5em;
+    text-align: center;
+    font-family: var(--font-merriweather);
+    color: var(--main-gold);
+}
+.my-github-link {
+    height: 3em;
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+    contrast(87%);
+}
+.rs-school-icon {
+    width: 5em;
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+    contrast(87%);
+}
 
