@@ -19,14 +19,14 @@
         </div>
         <div class="player-wrapper">
             <div class="player">
-                <video class="player__video" src="./assets/video/video.mp4"></video>
+                <video class="player__video viewer" src="./assets/video/video.mp4"></video>
                 <div class="player__controls">
-                    <button class="player__button switch-video" title="Play"></button>
+                    <button class="player__button toggle-video" title="Play"></button>
                     <div class="progress">
                         <div class="progress__line"></div>
                     </div>
-                    <button class="player__button switch-mute"></button>
-                    <input type="range" name="volume" class="player__slider-volume" min="0" max="100" step="1" value="40">
+                    <button class="player__button toggle-volume"></button>
+                    <input type="range" name="volume" class="player__slider volume-slider" min="0" max="100" step="1" value="40">
                     <button class="player__button player-fullscreen"></button>
                 </div>
             </div>
