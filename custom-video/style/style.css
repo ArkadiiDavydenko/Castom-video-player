@@ -81,7 +81,7 @@ h1 {
     position: absolute;
     top: 5%;
     width: 100%;
-    z-index: 1 ;
+    z-index: 1;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -104,6 +104,7 @@ h1 {
     flex: 0;
     flex-basis: 0%;
 }
+
 .video-time {
     flex: auto;
     color: var(--main-light);

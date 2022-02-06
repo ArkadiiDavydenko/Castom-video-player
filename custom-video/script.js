@@ -15,7 +15,6 @@ const volume = sliderVolume.value / 100;
 video.volume = volume;
 let progression;
 let mousedown;
-console.log(document.fullscreenElement)
 
 function switchPlay() {
     if (video.paused) {
@@ -64,8 +63,7 @@ function changeInput() {
 function handleProgress() {
     const percent = (video.currentTime / video.duration) * 100;
     progressVideo.style.flexBasis = `${percent}%`;
-    videoTime.innerHTML = `0.${Math.round(video.currentTime)} / 0. ${Math.round(video.duration)}`;
-    // console.log(document.fullscreenElement)
+    videoTime.innerHTML = `0.${Math.floor(video.currentTime)} / 0. ${Math.floor(video.duration)}`;
     // slider.style.left = `${percent}%`;
 }
 
@@ -88,7 +86,6 @@ function reloadVideo(e) {
 function goFullScreen() {
     if (video.webkitSupportsFullscreen) {
         video.webkitEnterFullScreen();
-        console.log(video.fullscreenElement)
     }
 }
 
@@ -124,3 +121,6 @@ progress.addEventListener('mousedown', () => mousedown = true);
 document.addEventListener('mouseup', () => mousedown = false);
 progress.addEventListener('mousemove', (event) => mousedown && scrub(event));
 
+console.log('Моя оценка - 70 балла(ов)\n' +
+
+    'Все пункты выполнены полностью.\n')
