@@ -5,6 +5,7 @@
     font-size: 1em;
     --main-gold: #BDAE82;
     --main-dark: #000000;
+    --main-light: #ffffff;
     --font-merriweather: 'Merriweather', serif;
 }
 
@@ -15,17 +16,14 @@
     padding: 0;
     margin: 0;
 }
-
 body {
     background-color: var(--main-dark);
 }
-
 h1 {
     font-size: 2.5rem;
     color: var(--main-gold);
     font-family: var(--font-merriweather);
 }
-
 .wrapper {
     min-height: 100vh;
     margin: 0 auto;
@@ -34,12 +32,10 @@ h1 {
     flex-direction: column;
     justify-content: space-between;
 }
-
 .video-container {
-    padding: 2em 1.5em;
+    padding:10%  1.5em 2em;
     text-align: center;
 }
-
 .title {
     height: 100px;
     display: inline-block;
@@ -48,35 +44,30 @@ h1 {
     text-align: center;
     padding: 0.5em 0;
 }
-
 .title__text {
     display: inline-block;
     width: 140px;
     background-color: var(--main-dark);
 }
-
 /*---------------player-------------------------------------------*/
 .player-wrapper {
     max-width: 1400px;
     padding-top: 2em;
 }
-
 .player {
     position: relative;
     border: solid 2px;
     border-color: var(--main-gold);
 }
-
 .player__video {
     width: 100%;
 }
-
 .player__controls {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5em 1em;
+    padding:0.2em 0.5em 0.3em;
 }
 .progress {
     flex: 10;
@@ -84,7 +75,7 @@ h1 {
     display:flex;
     height:12px;
     border: solid 2px var(--main-gold);
-    background-color: white;
+    background-color: var(--main-light);
 }
 .progress__line {
     width:50%;
@@ -102,16 +93,14 @@ h1 {
     height: 30px;
     width: 8px;
     border-radius: 2px;
-    background: white;
+    background: var(--main-light);
     cursor: pointer;
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
 }
-
-
 .player__slider {
     flex: 1.5;
     height: 12px;
-    width: 100px;
+    width: calc(0.5em + 10px);
     background: linear-gradient(to right, var(--main-gold) 0%, var(--main-gold) 40%, #fff 40%, #fff 100%);
     border: solid 2px var(--main-gold);
     -webkit-appearance: none;
@@ -122,13 +111,13 @@ h1 {
     height: 30px;
     width: 8px;
     border-radius: 2px;
-    background: white;
+    background: var(--main-light);
     cursor: pointer;
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
 }
 .change_color:hover {
     filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
-    transition: all 0.5s;
+    transition: all 0.2s;
 }
 /*---------------buttons--------------------------*/
 .main-button {
@@ -143,7 +132,7 @@ h1 {
     background-size: contain;
     background-repeat: no-repeat;
     background-color: transparent;
-    /*transition: all 0.2s;*/
+    cursor: pointer;
 }
 .player__button {
     padding: 0.3em;
@@ -153,6 +142,7 @@ h1 {
     background-position: center;
     height: 40px;
     width: 40px;
+    cursor: pointer;
 }
 .toggle-video {
     background-image: url("../assets/svg/play.svg");
@@ -160,25 +150,18 @@ h1 {
     background-repeat: no-repeat;
     background-color: transparent;
 }
-
 .toggle-volume {
     background-image: url("../assets/svg/volume.svg");
     background-size: contain;
     background-repeat: no-repeat;
     background-color: transparent;
 }
-
 .player-fullscreen {
     background-image: url("../assets/svg/fullscreen.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-color: transparent;
 }
-
-
-/*---------------layout for control player--------------------------*/
-
-
 /*---------------footer---------------------------------------------*/
 .footer {
     padding: 1em;
@@ -186,21 +169,18 @@ h1 {
     justify-content: space-between;
     align-items: center;
 }
-
 .footer-item {
     font-size: 1.2rem;
     padding: 0.5em;
     text-align: center;
     color: var(--main-gold);
 }
-
 .my-github-link {
-    height: 2em;
+    height: 32px;
     filter: invert(70%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
 }
-
 .rs-school-icon {
-    width: 5em;
+    width: 80px;
     filter: invert(70%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
 }
 
