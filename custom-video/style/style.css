@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap');
 
 :root {
     box-sizing: border-box;
@@ -7,6 +8,7 @@
     --main-dark: #000000;
     --main-light: #ffffff;
     --font-merriweather: 'Merriweather', serif;
+    --font-roboto: 'Roboto', sans-serif;
 }
 
 *,
@@ -72,6 +74,7 @@ h1 {
     width: 100%;
     position: relative;
     z-index: 10;
+    margin-bottom: -0.2em;
 }
 
 .player__controls {
@@ -101,9 +104,10 @@ h1 {
     flex: 0;
     flex-basis: 0%;
 }
-
-.controls-hidden {
-
+.video-time {
+    flex: auto;
+    color: var(--main-light);
+    font-family: var(--font-roboto);
 }
 
 /*.slider {*/
@@ -168,8 +172,8 @@ h1 {
     border: 0;
     background-color: var(--main-dark);
     background-position: center;
-    height: 40px;
-    width: 40px;
+    height: 32px;
+    width: 32px;
     cursor: pointer;
 }
 

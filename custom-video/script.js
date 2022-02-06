@@ -9,19 +9,21 @@ const progressVideo = player.querySelector('.progress__line');
 const progress = player.querySelector('.progress');
 const controlFullScreen = player.querySelector('.player-fullscreen');
 const controls = player.querySelector('.player__controls');
+const videoTime = player.querySelector('.video-time');
 // const slider = player.querySelector('.slider');
 const volume = sliderVolume.value / 100;
 video.volume = volume;
 let progression;
 let mousedown;
-
+console.log(document.fullscreenElement)
 
 function switchPlay() {
     if (video.paused) {
         video.play();
         playVideo.style.display = 'none';
         toggleVideo.style.backgroundImage = 'url("./assets/svg/pause.svg")';
-        progression = window.setInterval(handleProgress, 10);
+        progression = window.setInterval(handleProgress, 20);
+
     } else {
         video.pause();
         playVideo.style.display = 'block';
@@ -62,6 +64,8 @@ function changeInput() {
 function handleProgress() {
     const percent = (video.currentTime / video.duration) * 100;
     progressVideo.style.flexBasis = `${percent}%`;
+    videoTime.innerHTML = `0.${Math.round(video.currentTime)} / 0. ${Math.round(video.duration)}`;
+    // console.log(document.fullscreenElement)
     // slider.style.left = `${percent}%`;
 }
 
@@ -81,16 +85,32 @@ function reloadVideo(e) {
 
 }
 
-function goFullScreen(){
-    console.dir('work');
-    if(video.webkitSupportsFullscreen) video.webkitEnterFullScreen();
+function goFullScreen() {
+    if (video.webkitSupportsFullscreen) {
+        video.webkitEnterFullScreen();
+        console.log(video.fullscreenElement)
+    }
 }
 
-function showControls () {
+function showControls() {
     controls.style.position = 'relative';
 }
 
-video.addEventListener('click', e => !video.paused && switchPlay(e));
+function checkCurrentPlay() {
+    if (video.paused) {
+        playVideo.style.display = 'block';
+        playVideo.style.marginTop = '-93px';
+        toggleVideo.style.backgroundImage = 'url("./assets/svg/play.svg")';
+    } else {
+        playVideo.style.display = 'none';
+        toggleVideo.style.backgroundImage = 'url("./assets/svg/pause.svg")';
+    }
+
+}
+
+video.addEventListener('webkitfullscreenchange', checkCurrentPlay);
+video.addEventListener('click', switchPlay);
+// video.addEventListener('click', e => !video.paused && switchPlay(e));
 video.addEventListener('ended', reloadVideo);
 video.addEventListener('change', handleProgress);
 toggleVideo.addEventListener('click', switchPlay);
