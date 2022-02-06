@@ -8,6 +8,7 @@ const playVideo = player.querySelector('.main-button');
 const progressVideo = player.querySelector('.progress__line');
 const progress = player.querySelector('.progress');
 const controlFullScreen = player.querySelector('.player-fullscreen');
+const controls = player.querySelector('.player__controls');
 // const slider = player.querySelector('.slider');
 const volume = sliderVolume.value / 100;
 video.volume = volume;
@@ -15,7 +16,6 @@ let progression;
 let mousedown;
 
 
-console.log(progress.offsetWidth)
 function switchPlay() {
     if (video.paused) {
         video.play();
@@ -25,6 +25,7 @@ function switchPlay() {
     } else {
         video.pause();
         playVideo.style.display = 'block';
+        playVideo.style.marginTop = '-93px';
         toggleVideo.style.backgroundImage = 'url("./assets/svg/play.svg")';
     }
 }
@@ -56,13 +57,11 @@ function changeInput() {
         toggleVolume.style.backgroundImage = 'url("./assets/svg/volume.svg")';
         sliderVolume.style.background = `linear-gradient(to right, var(--main-gold) 0%, var(--main-gold) ${value}%, #fff ${value}%, white 100%)`
     }
-
 }
 
 function handleProgress() {
     const percent = (video.currentTime / video.duration) * 100;
     progressVideo.style.flexBasis = `${percent}%`;
-
     // slider.style.left = `${percent}%`;
 }
 
@@ -73,10 +72,12 @@ function scrub(event) {
 
 }
 
-function reloadVideo() {
+function reloadVideo(e) {
     video.currentTime = 0;
     playVideo.style.display = 'block';
     toggleVideo.style.backgroundImage = 'url("./assets/svg/play.svg")';
+    controls.style.position = 'absolute';
+    playVideo.style.marginTop = '-65px';
 
 }
 
@@ -85,16 +86,21 @@ function goFullScreen(){
     if(video.webkitSupportsFullscreen) video.webkitEnterFullScreen();
 }
 
+function showControls () {
+    controls.style.position = 'relative';
+}
+
 video.addEventListener('click', e => !video.paused && switchPlay(e));
 video.addEventListener('ended', reloadVideo);
 video.addEventListener('change', handleProgress);
 toggleVideo.addEventListener('click', switchPlay);
 playVideo.addEventListener('click', switchPlay);
+playVideo.addEventListener('click', showControls);
 toggleVolume.addEventListener('click', switchVolume);
 sliderVolume.addEventListener('input', changeInput);
 controlFullScreen.addEventListener('click', goFullScreen);
 progress.addEventListener('click', scrub)
-progress.addEventListener('mousedown', () => mousedown = true, console.log('true'));
-document.addEventListener('mouseup', () => mousedown = false, console.log('false'));
+progress.addEventListener('mousedown', () => mousedown = true);
+document.addEventListener('mouseup', () => mousedown = false);
 progress.addEventListener('mousemove', (event) => mousedown && scrub(event));
 
