@@ -160,7 +160,7 @@ h1 {
     margin-top: -65px;
     width: 130px;
     height: 130px;
-    background-image: url("../assets/svg/play-btn.svg");
+    background-image: url("../../custom-video/assets/svg/play-btn.svg");
     background-size: contain;
     background-repeat: no-repeat;
     background-color: transparent;
@@ -179,21 +179,21 @@ h1 {
 }
 
 .toggle-video {
-    background-image: url("../assets/svg/play.svg");
+    background-image: url("../../custom-video/assets/svg/play.svg");
     background-size: contain;
     background-repeat: no-repeat;
     background-color: transparent;
 }
 
 .toggle-volume {
-    background-image: url("../assets/svg/volume.svg");
+    background-image: url("../../custom-video/assets/svg/volume.svg");
     background-size: contain;
     background-repeat: no-repeat;
     background-color: transparent;
 }
 
 .player-fullscreen {
-    background-image: url("../assets/svg/fullscreen.png");
+    background-image: url("../../custom-video/assets/svg/fullscreen.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-color: transparent;
