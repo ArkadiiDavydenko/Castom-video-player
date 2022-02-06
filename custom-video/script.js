@@ -20,14 +20,14 @@ function switchPlay() {
     if (video.paused) {
         video.play();
         playVideo.style.display = 'none';
-        toggleVideo.style.backgroundImage = 'url("./assets/svg/pause.svg")';
+        toggleVideo.style.backgroundImage = 'url("./custom-video/assets/svg/pause.svg")';
         progression = window.setInterval(handleProgress, 20);
 
     } else {
         video.pause();
         playVideo.style.display = 'block';
         playVideo.style.marginTop = '-93px';
-        toggleVideo.style.backgroundImage = 'url("./assets/svg/play.svg")';
+        toggleVideo.style.backgroundImage = 'url("./custom-video/assets/svg/play.svg")';
     }
 }
 
@@ -35,16 +35,16 @@ function switchVolume() {
     if (sliderVolume.value == 0) {
         video.volume = 0.4;
         sliderVolume.value = video.volume * 100;
-        toggleVolume.style.backgroundImage = 'url("./assets/svg/volume.svg")';
+        toggleVolume.style.backgroundImage = 'url("./custom-video/assets/svg/volume.svg")';
         changeInput();
     } else if (video.volume) {
         video.volume = 0;
-        toggleVolume.style.backgroundImage = 'url("./assets/svg/mute.svg")';
+        toggleVolume.style.backgroundImage = 'url("./custom-video/assets/svg/mute.svg")';
         sliderVolume.value = 0;
         changeInput();
     } else {
         video.volume = sliderVolume.value / 100;
-        toggleVolume.style.backgroundImage = 'url("./assets/svg/volume.svg")';
+        toggleVolume.style.backgroundImage = 'url("./custom-video/assets/svg/volume.svg")';
     }
 }
 
@@ -52,10 +52,10 @@ function changeInput() {
     video.volume = (sliderVolume.value / 100)
     const value = sliderVolume.value;
     if (sliderVolume.value == 0) {
-        toggleVolume.style.backgroundImage = 'url("./assets/svg/mute.svg")';
+        toggleVolume.style.backgroundImage = 'url("./custom-video/assets/svg/mute.svg")';
         sliderVolume.style.background = `linear-gradient(to right, var(--main-gold) 0%, var(--main-gold) ${value}%, #fff ${value}%, white 100%)`
     } else {
-        toggleVolume.style.backgroundImage = 'url("./assets/svg/volume.svg")';
+        toggleVolume.style.backgroundImage = 'url("./custom-video/assets/svg/volume.svg")';
         sliderVolume.style.background = `linear-gradient(to right, var(--main-gold) 0%, var(--main-gold) ${value}%, #fff ${value}%, white 100%)`
     }
 }
@@ -77,7 +77,7 @@ function scrub(event) {
 function reloadVideo(e) {
     video.currentTime = 0;
     playVideo.style.display = 'block';
-    toggleVideo.style.backgroundImage = 'url("./assets/svg/play.svg")';
+    toggleVideo.style.backgroundImage = 'url("./custom-video/assets/svg/play.svg")';
     controls.style.position = 'absolute';
     playVideo.style.marginTop = '-65px';
 
@@ -97,10 +97,10 @@ function checkCurrentPlay() {
     if (video.paused) {
         playVideo.style.display = 'block';
         playVideo.style.marginTop = '-93px';
-        toggleVideo.style.backgroundImage = 'url("./assets/svg/play.svg")';
+        toggleVideo.style.backgroundImage = 'url("./custom-video/assets/svg/play.svg")';
     } else {
         playVideo.style.display = 'none';
-        toggleVideo.style.backgroundImage = 'url("./assets/svg/pause.svg")';
+        toggleVideo.style.backgroundImage = 'url("./custom-video/assets/svg/pause.svg")';
     }
 
 }
