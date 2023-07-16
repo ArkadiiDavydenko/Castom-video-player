@@ -1,1 +1,1 @@
-https://arkadiidavydenko.github.io/js30/
+https://arkadiidavydenko.github.io/Castom-video-player/
